@@ -14,11 +14,10 @@ const nav = function(){
     return `
     <div class="nav__section">
     <h3 class="nav__section__items nav__section__art">New Art</h3>
-    <h3 class="nav__section__items nav__section__api">Harvard API</h3>
+    <a class="nav__section__api-link" href="https://github.com/harvardartmuseums/api-docs" target="_blank"><h3 class="nav__section__items nav__section__api">Harvard API</h3></a>
     </div>
     `
 }
-
 
 const getArt = function(){
     fetch(`https://api.harvardartmuseums.org/object?apikey=05e25272-22c4-4ae2-b9bc-db212b94fe69&q=primaryimageurl:*%26 title:*&sort=random&size=1`)

@@ -34,6 +34,11 @@ body {
     justify-content: space-around;
 }
 
+    .nav__section__api-link{
+        text-decoration: none;
+        color: white;
+    }
+
     .nav__section__items {
         width: 10rem;
         height: 3rem;
@@ -43,4 +48,5 @@ body {
 
     .nav__section__items:hover {
         background-color: blue;
+        cursor: pointer;
     }
