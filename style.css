@@ -1,9 +1,25 @@
 body {
     background-color: black;
     color: white;
-    height: 100vh;
-    position: fixed;
+    width: 100%;
+    /*height: 100vh;*/
+    position: relative;
     top: 3rem;
+    overflow-y: scroll;
+}
+.app{
+    max-width: 900px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.app__art-title{
+    text-align: center;
+}
+
+
+.app__art-image-url{
+    width: 100%;
 }
 
 .nav__section{
