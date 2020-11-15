@@ -19,6 +19,7 @@ const nav = function(){
     `
 }
 
+
 const getArt = function(){
     fetch(`https://api.harvardartmuseums.org/object?apikey=05e25272-22c4-4ae2-b9bc-db212b94fe69&q=primaryimageurl:*%26 title:*&sort=random&size=1`)
     .then(response => response.json())
@@ -29,8 +30,16 @@ const getArt = function(){
         console.log(artTitle);
         console.log(artImageURL);
         console.log(artURL);
+        appDiv.innerHTML = loadArt(artTitle, artImageURL, artURL);
     })
     .catch(err => console.log(err))
+}
+
+const loadArt = function(artTitle, artImageURL, artURL){
+    return `
+    <h3 class="app__art-title">${artTitle}</h3>
+    <a class="app__art-url" href='${artURL}' target='_blank'><img class="app__art-image-url" src='${artImageURL}'></a>
+    `
 }
 
 navElement();
