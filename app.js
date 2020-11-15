@@ -6,7 +6,7 @@ const navElement = function(){
     appHeader.innerHTML= nav();
     artButton = document.querySelector('.nav__section__art');
     artButton.addEventListener('click', function(){
-        alert('new art on its way')
+        getArt()
     })
 }
 
@@ -20,9 +20,16 @@ const nav = function(){
 }
 
 const getArt = function(){
-    fetch('https://api.harvardartmuseums.org/object?apikey=05e25272-22c4-4ae2-b9bc-db212b94fe69&q=primaryimageurl:* %26 title:*&sort=random&size=1')
+    fetch(`https://api.harvardartmuseums.org/object?apikey=05e25272-22c4-4ae2-b9bc-db212b94fe69&q=primaryimageurl:*%26 title:*&sort=random&size=1`)
     .then(response => response.json())
-    .then(art => console.log(art))
+    .then(art => {
+        const artTitle = art.records[0].title;
+        const artImageURL = art.records[0].primaryimageurl;
+        const artURL = art.records[0].url;
+        console.log(artTitle);
+        console.log(artImageURL);
+        console.log(artURL);
+    })
     .catch(err => console.log(err))
 }
 
